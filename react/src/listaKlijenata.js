@@ -12,6 +12,7 @@ function ListaKlijenata(){
 
    async function obrisiKlijenta(id){
 
+console.log(id);
        let result= await fetch("http://localhost:8000/api/obrisi/"+id,{
             method:'DELETE'
         });
@@ -58,13 +59,13 @@ return (
 <tr>
 <td>{item.id}</td>
 <td>{item.ime}</td>
-<td style={{width:"350px", fontSize:"13px"}}>{item.email}</td>
+
 <td>{item.email}</td>
 <td>{item.kompanija_id}</td>
 
 {
         localStorage.getItem('user-info')?<>
-        <td><span onClick={()=>obrisiKlijenta(klijenti.id)} 
+        <td><span onClick={()=>obrisiKlijenta(item.id)} 
         style={{color:"red",background:"#F6D7D8", borderRadius:"30px", cursor:"pointer",fontSize:"20px"}}>Obriši</span></td>
         <td>
     <Link to={"update/"+klijenti.id}>

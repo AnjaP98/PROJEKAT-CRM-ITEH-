@@ -6,33 +6,46 @@ import Registracija from "./registracija";
  function Login() {
 
      const [email,setEmail]=useState("");
-     const [lozinka,setLozinka]=useState("");
+     const [password,setLozinka]=useState("");
     const history = useHistory();
     useEffect(()=>{
 
         if(localStorage.getItem('user-info')){
-            history.push("/add");
+            history.push("/listaKlijenata");
         }
     },[])
 
 
    async function login() {
-        console.warn(email,lozinka)
-        let item={email,lozinka};
-        let result= await fetch("http://localhost:8000/api/login",{
+        console.warn(email,password)
+        let item={email,password};
+        let result= await fetch("http://localhost:8000/api/login",
+    {
         method:'POST',
         headers:{
             "Content-Type":'application/json',
             "Accept":'application/json'
         },
         body: JSON.stringify(item)
-    
-    });
-    result = await result.json();
-    localStorage.setItem("user-info",JSON.stringify(result))
-    history.push("/add")
-    }
 
+    
+     });
+     
+    //  .then(data =>{data.json(); 
+    //     console.log(data)}  );
+    // console.log(data);
+
+    result = await result.json();
+    console.log(result.Greska)
+    if(result.Greska == "Email ili lozinka nisu ispravni!"){
+    
+    history.push("/login");
+    
+    }else{
+        localStorage.setItem("user-info",JSON.stringify(result));
+        history.push("/listaKlijenata");
+    }
+}
      return(
         
         <div>
@@ -44,7 +57,7 @@ import Registracija from "./registracija";
 <br/><br/>
 <input type="password" placeholder="Lozinka" onChange={(e)=>setLozinka(e.target.value)} className="form-content" /><br /><br/>
 <button className="btn btn-primary" onClick={login} >Prijava</button><br/><br/>
-<label><a href="http://localhost:3000/register">Nemate nalog? Napravite nalog</a></label>
+<label><a href="http://localhost:3000/register">Registrujte se</a></label>
         </div>
         </div>
      )

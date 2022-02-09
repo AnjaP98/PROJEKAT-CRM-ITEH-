@@ -7,7 +7,7 @@ function Registracija() {
     useEffect(()=>{
 
         if(localStorage.getItem('user-info')){
-            history.push("/add");
+            history.push("/listaKlijenata");
         }
     },[])
     const [ime,setIme]=useState("")
@@ -31,7 +31,7 @@ function Registracija() {
         })
         result =  await result.json()
         localStorage.setItem("user-info",JSON.stringify(result))
-        history.push("/add");
+        history.push("/listaKlijenata");
 
     }
 
