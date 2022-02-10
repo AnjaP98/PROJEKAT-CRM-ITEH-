@@ -46,7 +46,7 @@ function DodajKlijenta() {
 <input type="text" onChange={(e)=>setKompanijaid(e.target.value)} className="form-control" placeholder="ID kompanije..." /><br/>
 <br/>
 <br/>
-<button onClick={dodajKlijenta} className="btn btn-primary">DODAJ</button>
+<button style={{color:"black",backgroundColor:"grey",borderColor:"transparent"}} onClick={dodajKlijenta} className="btn btn-primary">DODAJ</button>
 
        </div></div>
     )
