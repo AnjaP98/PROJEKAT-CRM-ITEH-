@@ -26,12 +26,26 @@ console.log(id);
         let res = await result.json();
         setKlijenti(res)
     }
+    
+    const KlijentList = klijenti.map(klijent => (
+      <tr>
+          id={klijent.id}
+          ime={klijent.name}
+          
+          key={klijent.id}
+          </tr>
+      
+      )
+    );
+ 
+    const ukupno = `Ukupno klijenata: ${KlijentList.length}`;
   
 return (
 
      <div>
          <Meni />
          <br></br>
+     <h5 id="list-heading">{ukupno}</h5>  
 
          {/* <h1 style={{color:"green", fontStyle:"italic"}}>KLIJENTI</h1> */}
          <div className="col-sm-10 offset-sm-1" >
