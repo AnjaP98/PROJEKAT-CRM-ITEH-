@@ -31,6 +31,7 @@ function Registracija() {
         })
         result =  await result.json()
         localStorage.setItem("user-info",JSON.stringify(result))
+        alert("Korisnik je registrovan!");
         history.push("/listaKlijenata");
 
     }
