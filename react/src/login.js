@@ -38,6 +38,7 @@ import Registracija from "./registracija";
     result = await result.json();
     console.log(result.Greska)
     if(result.Greska == "Email ili lozinka nisu ispravni!"){
+      alert("Neuspešna prijava - korisničko ime ili lozinka nisu ispravni!");
     
     history.push("/login");
     
