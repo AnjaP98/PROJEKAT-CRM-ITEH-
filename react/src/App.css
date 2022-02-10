@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(240, 232, 247);
+ background-color: white;
 }
 
 .App-logo {
@@ -13,7 +13,7 @@
 }
 /*dugme za brisanje*/
 .obrisi{
-  color:"grey";
+  background:"white"
   background:"#F6D7D8"; 
   border:"40px";
   cursor:"pointer";
@@ -26,7 +26,7 @@
 }
 
 .App-header {
-  background-color: #202225;
+   background-color: #272829;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -35,9 +35,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+#container{
+  color: #293031;
+}
 
 .App-link {
-  color: #61dafb;
+   color: #293031;
 }
 
 @keyframes App-logo-spin {
@@ -48,3 +51,9 @@
     transform: rotate(360deg);
   }
 }
+
+a {
+  color: #313233;
+  text-decoration: none;
+}
+
