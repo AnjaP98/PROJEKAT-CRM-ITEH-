@@ -57,7 +57,7 @@ import Registracija from "./registracija";
         <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} className="form-content" />
 <br/><br/>
 <input type="password" placeholder="Lozinka" onChange={(e)=>setLozinka(e.target.value)} className="form-content" /><br /><br/>
-<button className="btn btn-primary" onClick={login} >Prijava</button><br/><br/>
+<button className="btn btn-primary"   style={{color:"black",backgroundColor:"grey",borderColor:"transparent"}} onClick={login} >Prijava</button><br/><br/>
 <label><a href="http://localhost:3000/register">Registrujte se</a></label>
         </div>
         </div>
