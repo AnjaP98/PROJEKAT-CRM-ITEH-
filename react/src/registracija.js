@@ -47,7 +47,7 @@ function Registracija() {
        <input type="text" value={ime} onChange={(e)=>setIme(e.target.value)} className="form-control" placeholder="Unesite ime:" /><br></br>
        <input type="text"  value={email}  onChange={(e)=>setEmail(e.target.value)} className="form-control" placeholder="Unesite email:" /><br></br>
        <input type="password"  value={lozinka}  onChange={(e)=>setLozinka(e.target.value)} className="form-control" placeholder="Unesite lozinku:" /><br></br>
-       <button onClick={reg} className="btn btn-primary">Registruj se</button>
+       <button onClick={reg}  style={{color:"black",backgroundColor:"grey",borderColor:"transparent"}} className="btn btn-primary">Registruj se</button>
        
        </div>
        </div>
